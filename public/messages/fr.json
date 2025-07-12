@@ -1,0 +1,172 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "download": "Télécharger",
+    "upload": "Télécharger",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "close": "Fermer",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "signOut": "Se déconnecter",
+    "email": "Email",
+    "password": "Mot de passe",
+    "name": "Nom",
+    "role": "Rôle",
+    "client": "Client",
+    "planner": "Wedding Planner",
+    "welcome": "Bienvenue"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcome": "Bienvenue, {name}!",
+    "stats": {
+      "events": "Événements",
+      "clients": "Clients",
+      "budget": "Budget utilisé",
+      "tasks": "Tâches complétées",
+      "daysLeft": "Jours restants",
+      "upcomingWeddings": "Mariages prochains"
+    },
+    "recentActivity": "Activité récente"
+  },
+  "profile": {
+    "title": "Profil du couple",
+    "brideName": "Nom de la mariée",
+    "groomName": "Nom du marié",
+    "weddingDate": "Date du mariage",
+    "budget": "Budget",
+    "culture": "Culture",
+    "traditions": "Traditions",
+    "save": "Enregistrer le profil"
+  },
+  "budget": {
+    "title": "Budget",
+    "totalBudget": "Budget total",
+    "totalSpent": "Total dépensé",
+    "remaining": "Restant",
+    "addExpense": "Ajouter une dépense",
+    "categories": {
+      "venue": "Lieu de réception",
+      "catering": "Traiteur",
+      "decoration": "Décoration",
+      "photography": "Photographie",
+      "music": "Musique",
+      "flowers": "Fleurs",
+      "dress": "Robe de mariée",
+      "suit": "Costume du marié",
+      "rings": "Alliances",
+      "transport": "Transport",
+      "accommodation": "Hébergement",
+      "invitations": "Invitations",
+      "favors": "Cadeaux d'invités",
+      "makeup": "Maquillage",
+      "hairdressing": "Coiffure",
+      "ceremony": "Cérémonie",
+      "honeymoon": "Voyage de noces",
+      "other": "Autre"
+    }
+  },
+  "timeline": {
+    "title": "Planning",
+    "addEvent": "Ajouter un événement",
+    "eventTypes": {
+      "engagement": "Fiançailles",
+      "khotba": "Khotba",
+      "religiousCeremony": "Cérémonie religieuse",
+      "henna": "Soirée henné",
+      "bachelorette": "EVJF",
+      "civilCeremony": "Mariage civil",
+      "reception": "Réception",
+      "trousseauPrep": "Préparation trousseau",
+      "other": "Autre"
+    }
+  },
+  "checklist": {
+    "title": "Checklist",
+    "addTask": "Ajouter une tâche",
+    "completed": "Terminé",
+    "pending": "En attente",
+    "priority": {
+      "high": "Haute",
+      "medium": "Moyenne", 
+      "low": "Basse"
+    }
+  },
+  "documents": {
+    "title": "Documents",
+    "addDocument": "Nouveau Document",
+    "categories": {
+      "contracts": "Contrats",
+      "invoices": "Factures",
+      "inspiration": "Inspiration",
+      "legalDocuments": "Documents Légaux",
+      "photos": "Photos",
+      "videos": "Vidéos",
+      "other": "Autre"
+    },
+    "uploadTitle": "Télécharger un Document",
+    "selectCategory": "Catégorie du document",
+    "documentTitle": "Titre du document",
+    "dragDrop": "Cliquez pour choisir un fichier ou glissez-déposez",
+    "fileTypes": "PDF, DOC, JPG, PNG, MP4 jusqu'à 10MB"
+  },
+  "messages": {
+    "title": "Messages",
+    "newMessage": "Nouveau message",
+    "typeMessage": "Tapez votre message... (Entrée pour envoyer)",
+    "conversations": "Conversations",
+    "noMessages": "Aucun message",
+    "startConversation": "Commencez la conversation en envoyant votre premier message"
+  },
+  "clients": {
+    "title": "Mes Clients",
+    "totalClients": "Clients Total",
+    "upcomingWeddings": "Mariages à venir",
+    "revenue": "Chiffre d'affaires",
+    "averageBudget": "Budget moyen",
+    "searchClient": "Rechercher un client...",
+    "sortBy": {
+      "weddingDate": "Date de mariage",
+      "budget": "Budget",
+      "progress": "Progression"
+    }
+  },
+  "analytics": {
+    "title": "Analytics & Insights",
+    "overview": "Vue d'ensemble",
+    "revenueEvolution": "Évolution du Chiffre d'Affaires",
+    "culturalDistribution": "Répartition par Culture",
+    "upcomingDeadlines": "Échéances Prochaines",
+    "urgentTasks": "Tâches Urgentes",
+    "budgetAnalysis": "Analyse Budgétaire"
+  },
+  "cultures": {
+    "moroccan": "Marocaine",
+    "tunisian": "Tunisienne", 
+    "algerian": "Algérienne",
+    "french": "Française",
+    "mixed": "Mixte"
+  },
+  "navigation": {
+    "dashboard": "Tableau de bord",
+    "profile": "Profil",
+    "timeline": "Planning",
+    "budget": "Budget",
+    "checklist": "Checklist",
+    "documents": "Documents",
+    "messages": "Messages",
+    "clients": "Clients",
+    "analytics": "Analytics",
+    "settings": "Paramètres"
+  }
+}

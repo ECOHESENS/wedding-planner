@@ -1,0 +1,13 @@
+Subject: Email Connection Test
+
+This is a test email to verify that your email connection is working properly.
+
+Test Details:
+- Date: ${new Date().toLocaleString()}
+- Subject: Email Connection Test
+- Purpose: Verify SMTP configuration
+
+If you receive this email, your email configuration is working correctly.
+
+---
+This is an automated test email. Please do not reply.

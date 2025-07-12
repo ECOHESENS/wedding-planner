@@ -1,0 +1,172 @@
+{
+  "common": {
+    "loading": "جاري التحميل...",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "view": "عرض",
+    "download": "تحميل",
+    "upload": "رفع",
+    "search": "بحث",
+    "filter": "تصفية",
+    "close": "إغلاق",
+    "yes": "نعم",
+    "no": "لا"
+  },
+  "auth": {
+    "signIn": "تسجيل الدخول",
+    "signUp": "إنشاء حساب",
+    "signOut": "تسجيل الخروج",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "name": "الاسم",
+    "role": "الدور",
+    "client": "عميل",
+    "planner": "منظم حفلات الزفاف",
+    "welcome": "مرحباً"
+  },
+  "dashboard": {
+    "title": "لوحة القيادة",
+    "welcome": "مرحباً، {name}!",
+    "stats": {
+      "events": "الفعاليات",
+      "clients": "العملاء",
+      "budget": "الميزانية المستخدمة",
+      "tasks": "المهام المكتملة",
+      "daysLeft": "الأيام المتبقية",
+      "upcomingWeddings": "حفلات الزفاف القادمة"
+    },
+    "recentActivity": "النشاط الأخير"
+  },
+  "profile": {
+    "title": "ملف الزوجين",
+    "brideName": "اسم العروس",
+    "groomName": "اسم العريس",
+    "weddingDate": "تاريخ الزفاف",
+    "budget": "الميزانية",
+    "culture": "الثقافة",
+    "traditions": "التقاليد",
+    "save": "حفظ الملف الشخصي"
+  },
+  "budget": {
+    "title": "إدارة الميزانية",
+    "totalBudget": "إجمالي الميزانية",
+    "totalSpent": "إجمالي المصروف",
+    "remaining": "المتبقي",
+    "addExpense": "إضافة مصروف",
+    "categories": {
+      "venue": "مكان الحفل",
+      "catering": "تقديم الطعام",
+      "decoration": "الزينة",
+      "photography": "التصوير",
+      "music": "الموسيقى",
+      "flowers": "الزهور",
+      "dress": "فستان العروس",
+      "suit": "بدلة العريس",
+      "rings": "الخواتم",
+      "transport": "المواصلات",
+      "accommodation": "الإقامة",
+      "invitations": "الدعوات",
+      "favors": "هدايا الضيوف",
+      "makeup": "المكياج",
+      "hairdressing": "تصفيف الشعر",
+      "ceremony": "الحفل",
+      "honeymoon": "شهر العسل",
+      "other": "أخرى"
+    }
+  },
+  "timeline": {
+    "title": "الجدول الزمني",
+    "addEvent": "إضافة فعالية",
+    "eventTypes": {
+      "engagement": "الخطوبة",
+      "khotba": "الخطبة",
+      "religiousCeremony": "الحفل الديني",
+      "henna": "ليلة الحناء",
+      "bachelorette": "حفلة العزوبية",
+      "civilCeremony": "الزواج المدني",
+      "reception": "الاستقبال",
+      "trousseauPrep": "تحضير الجهاز",
+      "other": "أخرى"
+    }
+  },
+  "checklist": {
+    "title": "قائمة المهام",
+    "addTask": "إضافة مهمة",
+    "completed": "مكتمل",
+    "pending": "في الانتظار",
+    "priority": {
+      "high": "عالية",
+      "medium": "متوسطة",
+      "low": "منخفضة"
+    }
+  },
+  "documents": {
+    "title": "إدارة الوثائق",
+    "addDocument": "وثيقة جديدة",
+    "categories": {
+      "contracts": "العقود",
+      "invoices": "الفواتير",
+      "inspiration": "الإلهام",
+      "legalDocuments": "الوثائق القانونية",
+      "photos": "الصور",
+      "videos": "الفيديوهات",
+      "other": "أخرى"
+    },
+    "uploadTitle": "رفع وثيقة",
+    "selectCategory": "فئة الوثيقة",
+    "documentTitle": "عنوان الوثيقة",
+    "dragDrop": "انقر لاختيار ملف أو اسحب وأفلت",
+    "fileTypes": "PDF، DOC، JPG، PNG، MP4 حتى 10 ميجابايت"
+  },
+  "messages": {
+    "title": "الرسائل",
+    "newMessage": "رسالة جديدة",
+    "typeMessage": "اكتب رسالتك... (Enter للإرسال)",
+    "conversations": "المحادثات",
+    "noMessages": "لا توجد رسائل",
+    "startConversation": "ابدأ المحادثة بإرسال رسالتك الأولى"
+  },
+  "clients": {
+    "title": "إدارة العملاء",
+    "totalClients": "إجمالي العملاء",
+    "upcomingWeddings": "حفلات الزفاف القادمة",
+    "revenue": "الإيرادات",
+    "averageBudget": "متوسط الميزانية",
+    "searchClient": "البحث عن عميل...",
+    "sortBy": {
+      "weddingDate": "تاريخ الزفاف",
+      "budget": "الميزانية",
+      "progress": "التقدم"
+    }
+  },
+  "analytics": {
+    "title": "التحليلات والرؤى",
+    "overview": "نظرة عامة",
+    "revenueEvolution": "تطور الإيرادات",
+    "culturalDistribution": "التوزيع الثقافي",
+    "upcomingDeadlines": "المواعيد النهائية القادمة",
+    "urgentTasks": "المهام العاجلة",
+    "budgetAnalysis": "تحليل الميزانية"
+  },
+  "cultures": {
+    "moroccan": "مغربية",
+    "tunisian": "تونسية",
+    "algerian": "جزائرية",
+    "french": "فرنسية",
+    "mixed": "مختلطة"
+  },
+  "navigation": {
+    "dashboard": "لوحة القيادة",
+    "profile": "الملف الشخصي",
+    "timeline": "الجدول الزمني",
+    "budget": "الميزانية",
+    "checklist": "قائمة المهام",
+    "documents": "الوثائق",
+    "messages": "الرسائل",
+    "clients": "العملاء",
+    "analytics": "التحليلات",
+    "settings": "الإعدادات"
+  }
+}

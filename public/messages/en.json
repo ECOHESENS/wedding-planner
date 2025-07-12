@@ -1,0 +1,172 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "download": "Download",
+    "upload": "Upload",
+    "search": "Search",
+    "filter": "Filter",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "name": "Name",
+    "role": "Role",
+    "client": "Client",
+    "planner": "Wedding Planner",
+    "welcome": "Welcome"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome, {name}!",
+    "stats": {
+      "events": "Events",
+      "clients": "Clients",
+      "budget": "Budget used",
+      "tasks": "Tasks completed",
+      "daysLeft": "Days left",
+      "upcomingWeddings": "Upcoming weddings"
+    },
+    "recentActivity": "Recent activity"
+  },
+  "profile": {
+    "title": "Couple Profile",
+    "brideName": "Bride's name",
+    "groomName": "Groom's name",
+    "weddingDate": "Wedding date",
+    "budget": "Budget",
+    "culture": "Culture",
+    "traditions": "Traditions",
+    "save": "Save profile"
+  },
+  "budget": {
+    "title": "Budget Management",
+    "totalBudget": "Total budget",
+    "totalSpent": "Total spent",
+    "remaining": "Remaining",
+    "addExpense": "Add expense",
+    "categories": {
+      "venue": "Venue",
+      "catering": "Catering",
+      "decoration": "Decoration",
+      "photography": "Photography",
+      "music": "Music",
+      "flowers": "Flowers",
+      "dress": "Wedding dress",
+      "suit": "Groom's suit",
+      "rings": "Wedding rings",
+      "transport": "Transportation",
+      "accommodation": "Accommodation",
+      "invitations": "Invitations",
+      "favors": "Wedding favors",
+      "makeup": "Makeup",
+      "hairdressing": "Hairdressing",
+      "ceremony": "Ceremony",
+      "honeymoon": "Honeymoon",
+      "other": "Other"
+    }
+  },
+  "timeline": {
+    "title": "Timeline",
+    "addEvent": "Add event",
+    "eventTypes": {
+      "engagement": "Engagement",
+      "khotba": "Khotba",
+      "religiousCeremony": "Religious ceremony",
+      "henna": "Henna night",
+      "bachelorette": "Bachelorette party",
+      "civilCeremony": "Civil ceremony",
+      "reception": "Reception",
+      "trousseauPrep": "Trousseau preparation",
+      "other": "Other"
+    }
+  },
+  "checklist": {
+    "title": "Checklist",
+    "addTask": "Add task",
+    "completed": "Completed",
+    "pending": "Pending",
+    "priority": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    }
+  },
+  "documents": {
+    "title": "Document Management",
+    "addDocument": "New Document",
+    "categories": {
+      "contracts": "Contracts",
+      "invoices": "Invoices",
+      "inspiration": "Inspiration",
+      "legalDocuments": "Legal Documents",
+      "photos": "Photos",
+      "videos": "Videos",
+      "other": "Other"
+    },
+    "uploadTitle": "Upload Document",
+    "selectCategory": "Document category",
+    "documentTitle": "Document title",
+    "dragDrop": "Click to choose a file or drag and drop",
+    "fileTypes": "PDF, DOC, JPG, PNG, MP4 up to 10MB"
+  },
+  "messages": {
+    "title": "Messages",
+    "newMessage": "New message",
+    "typeMessage": "Type your message... (Enter to send)",
+    "conversations": "Conversations",
+    "noMessages": "No messages",
+    "startConversation": "Start the conversation by sending your first message"
+  },
+  "clients": {
+    "title": "Client Management",
+    "totalClients": "Total Clients",
+    "upcomingWeddings": "Upcoming weddings",
+    "revenue": "Revenue",
+    "averageBudget": "Average budget",
+    "searchClient": "Search client...",
+    "sortBy": {
+      "weddingDate": "Wedding date",
+      "budget": "Budget",
+      "progress": "Progress"
+    }
+  },
+  "analytics": {
+    "title": "Analytics & Insights",
+    "overview": "Overview",
+    "revenueEvolution": "Revenue Evolution",
+    "culturalDistribution": "Cultural Distribution",
+    "upcomingDeadlines": "Upcoming Deadlines",
+    "urgentTasks": "Urgent Tasks",
+    "budgetAnalysis": "Budget Analysis"
+  },
+  "cultures": {
+    "moroccan": "Moroccan",
+    "tunisian": "Tunisian",
+    "algerian": "Algerian",
+    "french": "French",
+    "mixed": "Mixed"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "timeline": "Timeline",
+    "budget": "Budget",
+    "checklist": "Checklist",
+    "documents": "Documents",
+    "messages": "Messages",
+    "clients": "Clients",
+    "analytics": "Analytics",
+    "settings": "Settings"
+  }
+}

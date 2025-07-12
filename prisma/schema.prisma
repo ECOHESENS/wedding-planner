@@ -1,0 +1,344 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                   String              @id @default(cuid())
+  email                String              @unique
+  password             String
+  name                 String
+  role                 Role                @default(CLIENT)
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
+  trialEndsAt          DateTime?
+  subscriptionStatus   SubscriptionStatus? @default(TRIALING)
+  subscriptionPlan     SubscriptionPlan?
+  subscriptionEndsAt   DateTime?
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+  adminActions         AdminAction[]       @relation("AdminActions")
+  brideForCouples      Couple[]            @relation("BrideRelation")
+  groomForCouples      Couple[]            @relation("GroomRelation")
+  plannerClients       Couple[]            @relation("PlannerClients")
+  messages             Message[]
+  attendees            Attendee[]          @relation("UserAttendees")
+
+  @@map("users")
+}
+
+model Couple {
+  id               String       @id @default(cuid())
+  brideName        String
+  groomName        String
+  brideOrigin      String?
+  groomOrigin      String?
+  brideNationality String?
+  groomNationality String?
+  weddingDate      DateTime?
+  estimatedGuests  Int?
+  totalBudget      Float?
+  culture          Culture      @default(MOROCCAN)
+  secondaryCulture Culture?
+  phone            String?
+  address          String?
+  notes            String?
+  status           CoupleStatus @default(PLANNING)
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  brideId          String
+  groomId          String?
+  plannerId        String?
+  budgetItems      BudgetItem[]
+  checklists       Checklist[]
+  bride            User         @relation("BrideRelation", fields: [brideId], references: [id])
+  groom            User?        @relation("GroomRelation", fields: [groomId], references: [id])
+  planner          User?        @relation("PlannerClients", fields: [plannerId], references: [id])
+  documents        Document[]
+  events           Event[]
+  messages         Message[]
+  weddingDays      WeddingDay[]
+
+  @@map("couples")
+}
+
+model WeddingDay {
+  id              String               @id @default(cuid())
+  name            String
+  date            DateTime
+  location        String?
+  description     String?
+  estimatedGuests Int?
+  budget          Float?
+  isMainDay       Boolean              @default(false)
+  order           Int                  @default(1)
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+  coupleId        String
+  budgetItems     BudgetItem[]         @relation("WeddingDayBudget")
+  events          Event[]              @relation("WeddingDayEvents")
+  attendees       WeddingDayAttendee[]
+  couple          Couple               @relation(fields: [coupleId], references: [id], onDelete: Cascade)
+
+  @@map("wedding_days")
+}
+
+model Attendee {
+  id                   String               @id @default(cuid())
+  firstName            String
+  lastName             String
+  email                String?
+  phone                String?
+  category             AttendeeCategory
+  side                 AttendeeSide
+  age                  Int?
+  address              String?
+  dietaryRestrictions  String[]
+  plusOne              Boolean              @default(false)
+  plusOneName          String?
+  confirmed            Boolean              @default(false)
+  invitationSent       Boolean              @default(false)
+  tableNumber          Int?
+  specialNeeds         String?
+  notes                String?
+  rsvpDate             DateTime?
+  relationshipType     String?
+  parentId             String?
+  specialRole          String[]
+  createdAt            DateTime             @default(now())
+  updatedAt            DateTime             @updatedAt
+  userId               String
+  user                 User                 @relation("UserAttendees", fields: [userId], references: [id], onDelete: Cascade)
+  weddingDayAttendees  WeddingDayAttendee[]
+
+  @@map("attendees")
+}
+
+model WeddingDayAttendee {
+  id           String     @id @default(cuid())
+  attendeeId   String
+  weddingDayId String
+  confirmed    Boolean    @default(false)
+  role         String?
+  notes        String?
+  createdAt    DateTime   @default(now())
+  attendee     Attendee   @relation(fields: [attendeeId], references: [id], onDelete: Cascade)
+  weddingDay   WeddingDay @relation(fields: [weddingDayId], references: [id], onDelete: Cascade)
+
+  @@unique([attendeeId, weddingDayId])
+  @@map("wedding_day_attendees")
+}
+
+model Event {
+  id           String      @id @default(cuid())
+  title        String
+  type         EventType
+  date         DateTime?
+  time         String?
+  location     String?
+  description  String?
+  isCompleted  Boolean     @default(false)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  coupleId     String
+  weddingDayId String?
+  couple       Couple      @relation(fields: [coupleId], references: [id], onDelete: Cascade)
+  weddingDay   WeddingDay? @relation("WeddingDayEvents", fields: [weddingDayId], references: [id])
+
+  @@map("events")
+}
+
+model BudgetItem {
+  id            String         @id @default(cuid())
+  category      BudgetCategory
+  title         String
+  estimatedCost Float?
+  actualCost    Float?
+  paidAmount    Float?
+  vendor        String?
+  notes         String?
+  isPaid        Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  coupleId      String
+  weddingDayId  String?
+  couple        Couple         @relation(fields: [coupleId], references: [id], onDelete: Cascade)
+  weddingDay    WeddingDay?    @relation("WeddingDayBudget", fields: [weddingDayId], references: [id])
+
+  @@map("budget_items")
+}
+
+model Checklist {
+  id          String            @id @default(cuid())
+  title       String
+  category    ChecklistCategory
+  culture     Culture?
+  isCompleted Boolean           @default(false)
+  completedAt DateTime?
+  notes       String?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+  coupleId    String
+  couple      Couple            @relation(fields: [coupleId], references: [id], onDelete: Cascade)
+
+  @@map("checklists")
+}
+
+model Document {
+  id         String           @id @default(cuid())
+  title      String
+  fileName   String
+  fileUrl    String
+  fileType   String
+  category   DocumentCategory
+  uploadedAt DateTime         @default(now())
+  coupleId   String
+  couple     Couple           @relation(fields: [coupleId], references: [id], onDelete: Cascade)
+
+  @@map("documents")
+}
+
+model Message {
+  id            String   @id @default(cuid())
+  content       String
+  isFromPlanner Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  senderId      String
+  coupleId      String
+  couple        Couple   @relation(fields: [coupleId], references: [id], onDelete: Cascade)
+  sender        User     @relation(fields: [senderId], references: [id])
+
+  @@map("messages")
+}
+
+model AdminAction {
+  id        String   @id @default(cuid())
+  action    String
+  target    String
+  details   Json?
+  createdAt DateTime @default(now())
+  adminId   String
+  admin     User     @relation("AdminActions", fields: [adminId], references: [id])
+
+  @@map("admin_actions")
+}
+
+enum Role {
+  CLIENT
+  PLANNER
+  ADMIN
+}
+
+enum Culture {
+  MOROCCAN
+  TUNISIAN
+  ALGERIAN
+  FRENCH
+  SPANISH
+  ITALIAN
+  TURKISH
+  LEBANESE
+  MIXED
+}
+
+enum EventType {
+  ENGAGEMENT
+  KHOTBA
+  RELIGIOUS_CEREMONY
+  HENNA
+  BACHELORETTE
+  CIVIL_CEREMONY
+  RECEPTION
+  TROUSSEAU_PREP
+  OTHER
+}
+
+enum BudgetCategory {
+  VENUE
+  CATERING
+  PHOTOGRAPHY
+  VIDEOGRAPHY
+  DECORATIONS
+  FLOWERS
+  MUSIC_DJ
+  BRIDE_ATTIRE
+  GROOM_ATTIRE
+  JEWELRY
+  MAKEUP_HAIR
+  TRANSPORTATION
+  GIFTS
+  INVITATIONS
+  TROUSSEAU
+  HENNA_SUPPLIES
+  NEGAFA
+  OTHER
+}
+
+enum ChecklistCategory {
+  ENGAGEMENT
+  KHOTBA
+  RELIGIOUS_CEREMONY
+  HENNA
+  BACHELORETTE
+  CIVIL_CEREMONY
+  RECEPTION
+  TROUSSEAU
+  GENERAL
+}
+
+enum DocumentCategory {
+  CONTRACTS
+  INVOICES
+  INSPIRATION
+  LEGAL_DOCUMENTS
+  PHOTOS
+  VIDEOS
+  OTHER
+}
+
+enum SubscriptionStatus {
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  CANCELED
+  INCOMPLETE
+  INCOMPLETE_EXPIRED
+  UNPAID
+}
+
+enum SubscriptionPlan {
+  MONTHLY
+  QUARTERLY
+  ANNUAL
+}
+
+enum CoupleStatus {
+  PLANNING
+  READY
+  MARRIED
+  CANCELLED
+}
+
+enum AttendeeCategory {
+  TEMOINS
+  DEMOISELLES_HONNEUR
+  GARCONS_HONNEUR
+  FAMILLE_PROCHE
+  FAMILLE_ETENDUE
+  AMIS_PROCHES
+  COLLEGUES
+  INVITES_CEREMONIE
+  INVITES_RECEPTION
+  ENFANTS
+  AUTRES
+}
+
+enum AttendeeSide {
+  MARIE
+  MARIEE
+  COMMUN
+}
