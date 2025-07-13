@@ -8,9 +8,5 @@
     "app/api/**/*.ts": {
       "maxDuration": 30
     }
-  },
-  "env": {
-    "NEXTAUTH_SECRET": "@nextauth_secret",
-    "NEXTAUTH_URL": "@nextauth_url"
   }
 }
