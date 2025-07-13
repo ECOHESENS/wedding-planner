@@ -38,7 +38,6 @@ export async function middleware(request: NextRequest) {
   
   // Rate limiting headers (basic implementation)
   const userAgent = request.headers.get('user-agent') || ''
-  const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown'
   
   // Add basic rate limiting info to headers
   response.headers.set('X-RateLimit-Limit', '1000')

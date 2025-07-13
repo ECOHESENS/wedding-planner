@@ -19,7 +19,7 @@ export class AppError extends Error {
 }
 
 export class ValidationError extends AppError {
-  constructor(message: string, field?: string) {
+  constructor(message: string) {
     super(message, 400, true, 'VALIDATION_ERROR')
     this.name = 'ValidationError'
   }
@@ -153,9 +153,9 @@ export function handleApiError(error: unknown, request?: Request): NextResponse 
 
 // Async error wrapper for API routes
 export function asyncErrorHandler(
-  handler: (request: Request, params?: any) => Promise<Response | NextResponse>
+  handler: (request: Request, params?: Record<string, unknown>) => Promise<Response | NextResponse>
 ) {
-  return async (request: Request, params?: any) => {
+  return async (request: Request, params?: Record<string, unknown>) => {
     try {
       return await handler(request, params)
     } catch (error) {
@@ -172,7 +172,7 @@ export function isOperationalError(error: unknown): error is AppError {
 // Global error handler setup
 export function setupGlobalErrorHandler() {
   // Handle unhandled promise rejections
-  process.on('unhandledRejection', (reason: unknown, promise: Promise<unknown>) => {
+  process.on('unhandledRejection', (reason: unknown) => {
     logger.error('Unhandled Promise Rejection', {
       reason: reason instanceof Error ? reason.message : String(reason),
       stack: reason instanceof Error ? reason.stack : undefined

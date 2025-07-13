@@ -11,9 +11,9 @@ type Translations = {
   [locale: string]: TranslationObject
 }
 
-let cachedTranslations: Translations = {}
+const cachedTranslations: Translations = {}
 
-export function useTranslations(namespace?: string) {
+export function useTranslations() {
   const { language } = useLanguage()
   const [translations, setTranslations] = useState<TranslationObject>({})
   const [loading, setLoading] = useState(true)
@@ -56,7 +56,7 @@ export function useTranslations(namespace?: string) {
     }
 
     const keys = key.split('.')
-    let value: any = translations
+    let value: string | TranslationObject = translations
 
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
